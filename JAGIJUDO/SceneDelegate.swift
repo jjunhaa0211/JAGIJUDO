@@ -10,7 +10,9 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func start() {
-        window?.rootViewController = UINavigationController(rootViewController: ViewController())
+        window?.rootViewController = UINavigationController(rootViewController: TabBarViewController())
+        window?.backgroundColor = .systemBackground
+        window?.tintColor = UIColor.mainTintColor
         window?.makeKeyAndVisible()
     }
 }
