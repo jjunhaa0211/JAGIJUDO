@@ -7,11 +7,11 @@
 
 import Foundation
 
-public enum Language: CaseIterable {
+public enum Language: String, CaseIterable, Codable {
     case ko
     case en
     case ja
-    case ch
+    case ch = "zn-CN"
     
     var title: String {
         switch self {
@@ -20,5 +20,9 @@ public enum Language: CaseIterable {
         case .ja: return "일본어"
         case .ch: return "중국어"
         }
+    }
+    
+    var languageCode: String {
+        return self.rawValue
     }
 }

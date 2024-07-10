@@ -4,15 +4,12 @@
 //
 //  Created by 박준하 on 7/9/24.
 //
-
+/// 번역기 아직 연동 안됨
 import SnapKit
 import UIKit
+import Alamofire
 
 final class TranslateViewController: UIViewController {
-    enum `Type` {
-        case source
-        case target
-    }
     
     private var sourceLanguage: Language = .ko
     private var targetLanguage: Language = .en
@@ -60,8 +57,34 @@ final class TranslateViewController: UIViewController {
         $0.setImage(UIImage(systemName: "bookmark"), for: .normal)
     }
     
+    @objc func didTapBookmarkButton() {
+        guard
+            let sourceText = sourceLabel.text,
+            let translatedText = resultLabel.text,
+            bookmarkButton.imageView?.image == UIImage(systemName: "bookmark") else { return }
+        
+        bookmarkButton.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
+        
+        let currentBookmarks: [Bookmark] = UserDefaults.standard.bookmarks
+        let newBookmark = Bookmark(
+            sourceLangue: sourceLanguage,
+            translatedLanguage: targetLanguage,
+            sourceText: sourceText,
+            translatedText: translatedText
+        )
+        
+        UserDefaults.standard.bookmarks = [newBookmark] + currentBookmarks
+        
+        print(UserDefaults.standard.bookmarks)
+    }
+    
     private lazy var copyButton = UIButton().then {
         $0.setImage(UIImage(systemName: "doc.on.doc"), for: .normal)
+        $0.addTarget(self, action: #selector(didTapCopyButton), for: .touchUpInside)
+    }
+    
+    @objc func didTapCopyButton() {
+        UIPasteboard.general.string = resultLabel.text
     }
     
     private lazy var sourceLabelBaseButton = UIView().then {
@@ -82,6 +105,8 @@ final class TranslateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        bookmarkButton.addTarget(self, action: #selector(didTapBookmarkButton), for: .touchUpInside)
+        
         view.backgroundColor = .secondarySystemBackground
         
         setupViews()
@@ -94,6 +119,8 @@ extension TranslateViewController: SourceTextViewControllerDelegate {
         
         sourceLabel.text = sourceText
         sourceLabel.textColor = .label
+        
+        bookmarkButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
     }
 }
 

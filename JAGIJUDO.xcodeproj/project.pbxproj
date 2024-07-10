@@ -19,6 +19,17 @@
 		0EF2E0482C3D6E2B00F0E8CC /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF2E0472C3D6E2B00F0E8CC /* UIColor+.swift */; };
 		0EF2E04A2C3D778900F0E8CC /* SourceTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF2E0492C3D778900F0E8CC /* SourceTextViewController.swift */; };
 		0EF2E04D2C3D835700F0E8CC /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF2E04C2C3D835700F0E8CC /* Language.swift */; };
+		0EF2E04F2C3D86BB00F0E8CC /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF2E04E2C3D86BB00F0E8CC /* Bookmark.swift */; };
+		0EF2E0512C3D89A400F0E8CC /* UserDefaults+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF2E0502C3D89A400F0E8CC /* UserDefaults+.swift */; };
+		0EF2E0542C3D8DCD00F0E8CC /* BookmarkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF2E0532C3D8DCD00F0E8CC /* BookmarkListViewController.swift */; };
+		0EF2E0562C3D901E00F0E8CC /* BookmarkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF2E0552C3D901E00F0E8CC /* BookmarkCollectionViewCell.swift */; };
+		0EF2E0582C3D934900F0E8CC /* BookmarkTextStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF2E0572C3D934900F0E8CC /* BookmarkTextStackView.swift */; };
+		0EF2E05A2C3D956300F0E8CC /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF2E0592C3D956300F0E8CC /* Type.swift */; };
+		0EF2E05E2C3DA4D800F0E8CC /* TranslateRequesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF2E05D2C3DA4D800F0E8CC /* TranslateRequesModel.swift */; };
+		0EF2E0602C3DA51800F0E8CC /* TranslateReponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF2E05F2C3DA51800F0E8CC /* TranslateReponseModel.swift */; };
+		0EF2E0632C3DA5BE00F0E8CC /* TranslatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF2E0622C3DA5BE00F0E8CC /* TranslatorManager.swift */; };
+		0EF2E0652C3E091B00F0E8CC /* PaPago.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF2E0642C3E091B00F0E8CC /* PaPago.swift */; };
+		0EF2E0672C3E150100F0E8CC /* ChatGPTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF2E0662C3E150100F0E8CC /* ChatGPTResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +44,17 @@
 		0EF2E0472C3D6E2B00F0E8CC /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		0EF2E0492C3D778900F0E8CC /* SourceTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceTextViewController.swift; sourceTree = "<group>"; };
 		0EF2E04C2C3D835700F0E8CC /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		0EF2E04E2C3D86BB00F0E8CC /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
+		0EF2E0502C3D89A400F0E8CC /* UserDefaults+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+.swift"; sourceTree = "<group>"; };
+		0EF2E0532C3D8DCD00F0E8CC /* BookmarkListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkListViewController.swift; sourceTree = "<group>"; };
+		0EF2E0552C3D901E00F0E8CC /* BookmarkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCollectionViewCell.swift; sourceTree = "<group>"; };
+		0EF2E0572C3D934900F0E8CC /* BookmarkTextStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkTextStackView.swift; sourceTree = "<group>"; };
+		0EF2E0592C3D956300F0E8CC /* Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
+		0EF2E05D2C3DA4D800F0E8CC /* TranslateRequesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateRequesModel.swift; sourceTree = "<group>"; };
+		0EF2E05F2C3DA51800F0E8CC /* TranslateReponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateReponseModel.swift; sourceTree = "<group>"; };
+		0EF2E0622C3DA5BE00F0E8CC /* TranslatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorManager.swift; sourceTree = "<group>"; };
+		0EF2E0642C3E091B00F0E8CC /* PaPago.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaPago.swift; sourceTree = "<group>"; };
+		0EF2E0662C3E150100F0E8CC /* ChatGPTResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +92,9 @@
 			children = (
 				0EF2E0252C3D61BE00F0E8CC /* AppDelegate.swift */,
 				0EF2E0272C3D61BE00F0E8CC /* SceneDelegate.swift */,
-				0EF2E0472C3D6E2B00F0E8CC /* UIColor+.swift */,
-				0EF2E04C2C3D835700F0E8CC /* Language.swift */,
+				0EF2E0612C3DA5A800F0E8CC /* Managers */,
+				0EF2E05C2C3D96B400F0E8CC /* Models */,
+				0EF2E0522C3D89DC00F0E8CC /* Extension */,
 				0EF2E0412C3D683F00F0E8CC /* Scenes */,
 				0EF2E02E2C3D61C000F0E8CC /* Assets.xcassets */,
 				0EF2E0302C3D61C000F0E8CC /* LaunchScreen.storyboard */,
@@ -83,8 +106,9 @@
 		0EF2E0412C3D683F00F0E8CC /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				0EF2E04B2C3D779600F0E8CC /* Translate */,
 				0EF2E03F2C3D649D00F0E8CC /* TabBarViewController.swift */,
+				0EF2E04B2C3D779600F0E8CC /* Translate */,
+				0EF2E05B2C3D969000F0E8CC /* Bookmark */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -96,6 +120,47 @@
 				0EF2E0492C3D778900F0E8CC /* SourceTextViewController.swift */,
 			);
 			path = Translate;
+			sourceTree = "<group>";
+		};
+		0EF2E0522C3D89DC00F0E8CC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0EF2E0472C3D6E2B00F0E8CC /* UIColor+.swift */,
+				0EF2E0502C3D89A400F0E8CC /* UserDefaults+.swift */,
+				0EF2E04C2C3D835700F0E8CC /* Language.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		0EF2E05B2C3D969000F0E8CC /* Bookmark */ = {
+			isa = PBXGroup;
+			children = (
+				0EF2E0532C3D8DCD00F0E8CC /* BookmarkListViewController.swift */,
+				0EF2E0552C3D901E00F0E8CC /* BookmarkCollectionViewCell.swift */,
+				0EF2E0572C3D934900F0E8CC /* BookmarkTextStackView.swift */,
+			);
+			path = Bookmark;
+			sourceTree = "<group>";
+		};
+		0EF2E05C2C3D96B400F0E8CC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0EF2E04E2C3D86BB00F0E8CC /* Bookmark.swift */,
+				0EF2E0592C3D956300F0E8CC /* Type.swift */,
+				0EF2E05D2C3DA4D800F0E8CC /* TranslateRequesModel.swift */,
+				0EF2E05F2C3DA51800F0E8CC /* TranslateReponseModel.swift */,
+				0EF2E0642C3E091B00F0E8CC /* PaPago.swift */,
+				0EF2E0662C3E150100F0E8CC /* ChatGPTResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0EF2E0612C3DA5A800F0E8CC /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				0EF2E0622C3DA5BE00F0E8CC /* TranslatorManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,13 +243,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EF2E0672C3E150100F0E8CC /* ChatGPTResponse.swift in Sources */,
 				0EF2E0402C3D649D00F0E8CC /* TabBarViewController.swift in Sources */,
+				0EF2E05E2C3DA4D800F0E8CC /* TranslateRequesModel.swift in Sources */,
+				0EF2E0652C3E091B00F0E8CC /* PaPago.swift in Sources */,
+				0EF2E0512C3D89A400F0E8CC /* UserDefaults+.swift in Sources */,
 				0EF2E0432C3D685700F0E8CC /* TranslateViewController.swift in Sources */,
 				0EF2E04A2C3D778900F0E8CC /* SourceTextViewController.swift in Sources */,
 				0EF2E04D2C3D835700F0E8CC /* Language.swift in Sources */,
 				0EF2E0262C3D61BE00F0E8CC /* AppDelegate.swift in Sources */,
+				0EF2E0632C3DA5BE00F0E8CC /* TranslatorManager.swift in Sources */,
 				0EF2E0282C3D61BE00F0E8CC /* SceneDelegate.swift in Sources */,
+				0EF2E05A2C3D956300F0E8CC /* Type.swift in Sources */,
 				0EF2E0482C3D6E2B00F0E8CC /* UIColor+.swift in Sources */,
+				0EF2E0542C3D8DCD00F0E8CC /* BookmarkListViewController.swift in Sources */,
+				0EF2E04F2C3D86BB00F0E8CC /* Bookmark.swift in Sources */,
+				0EF2E0582C3D934900F0E8CC /* BookmarkTextStackView.swift in Sources */,
+				0EF2E0562C3D901E00F0E8CC /* BookmarkCollectionViewCell.swift in Sources */,
+				0EF2E0602C3DA51800F0E8CC /* TranslateReponseModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
