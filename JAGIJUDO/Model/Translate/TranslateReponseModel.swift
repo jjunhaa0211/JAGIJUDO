@@ -1,10 +1,3 @@
-//
-//  TranslateReponseModel.swift
-//  JAGIJUDO
-//
-//  Created by 박준하 on 7/10/24.
-//
-
 import Foundation
 
 struct TranslateReponseModel: Decodable {
@@ -17,8 +10,6 @@ struct TranslateReponseModel: Decodable {
     }
     
     struct Result: Decodable {
-//        let srcLangType: String
-//        let tarLangType: String
         let translatedText: String
     }
 }

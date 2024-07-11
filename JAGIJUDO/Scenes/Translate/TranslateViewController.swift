@@ -1,16 +1,15 @@
-//
-//  TranslateViewController.swift
-//  JAGIJUDO
-//
-//  Created by 박준하 on 7/9/24.
-//
 /// 번역기 아직 연동 안됨
 import SnapKit
 import UIKit
 import Alamofire
 
-final class TranslateViewController: UIViewController {
+final public class TranslateViewController: UIViewController {
     
+    struct Dependency {
+        let viewModel: TranslateViewModel
+    }
+    
+    private let viewModel: TranslateViewModel
     private var sourceLanguage: Language = .ko
     private var targetLanguage: Language = .en
     
@@ -102,7 +101,16 @@ final class TranslateViewController: UIViewController {
         $0.font = .systemFont(ofSize: 23.0, weight: .semibold)
     }
     
-    override func viewDidLoad() {
+    init(dependency: Dependency) {
+          self.viewModel = dependency.viewModel
+          super.init(nibName: nil, bundle: nil)
+      }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         bookmarkButton.addTarget(self, action: #selector(didTapBookmarkButton), for: .touchUpInside)

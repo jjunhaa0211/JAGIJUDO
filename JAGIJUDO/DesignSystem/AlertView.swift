@@ -1,10 +1,3 @@
-//
-//  AlertView.swift
-//  JAGIJUDO
-//
-//  Created by 박준하 on 7/10/24.
-//
-
 import UIKit
 import SnapKit
 import Then
@@ -160,15 +153,17 @@ final class AlertView: UIView {
     
     private func setUI() {
         alpha = 0
-        addSubview(backgroundView)
-        addSubview(alertView)
-        addSubview(alertLabel)
-        addSubview(subTitleLabel)
-        addSubview(backgroundButton)
-        addSubview(okButton)
         
-        addSubview(checkMarkImageView)
-        addSubview(xMarkImageView)
+        [
+            backgroundView,
+            alertView,
+            alertLabel,
+            subTitleLabel,
+            backgroundButton,
+            okButton,
+            checkMarkImageView,
+            xMarkImageView
+        ].forEach { self.addSubview($0) }
         
         backgroundView.snp.makeConstraints {
             $0.top.leading.trailing.bottom.equalToSuperview()

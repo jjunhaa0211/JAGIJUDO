@@ -23,7 +23,6 @@ struct WordSet: Equatable, IdentifiableType {
 }
 
 // MARK: - CoreData
-
 extension WordSet {
     public static var entityName: String {
         return "WordSet"

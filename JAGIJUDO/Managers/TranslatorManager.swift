@@ -1,13 +1,7 @@
-//
-//  TranslatorManager.swift
-//  JAGIJUDO
-//
-//  Created by 박준하 on 7/10/24.
-//
-
 import Alamofire
 import Foundation
 
+/// 파파고 API 서비스 종료
 struct TranslatorManager {
     var sourceLanguage: Language = .ko
     var targetLanguage: Language = .en

@@ -1,10 +1,3 @@
-//
-//  BookmarkCollectionViewCell.swift
-//  JAGIJUDO
-//
-//  Created by 박준하 on 7/10/24.
-//
-
 import SnapKit
 import UIKit
 import Then
