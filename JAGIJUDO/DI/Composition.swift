@@ -29,6 +29,9 @@ extension AppDependency {
         let translateViewControllerFactory: (TranslateViewController.Dependency) -> TranslateViewController = { dependency in
             return .init(dependency: dependency)
         }
+        let bookmarkListViewControllerFactory: (BookmarkListViewController.Dependency) -> BookmarkListViewController = { dependency in
+            return .init(dependency: dependency)
+        }
         
         return .init(
             coordinator:
@@ -44,7 +47,8 @@ extension AppDependency {
                             wordListCreateViewControllerFactory: wordListCreateViewControllerFactory,
                             testViewControllerFactory: testViewControllerFactory,
                             testResultViewControllerFactory: testResultViewControllerFactory,
-                            translateViewControllerFactory: translateViewControllerFactory
+                            translateViewControllerFactory: translateViewControllerFactory,
+                            bookmarkListViewControllerFactory: bookmarkListViewControllerFactory
                         )
                     )
         )

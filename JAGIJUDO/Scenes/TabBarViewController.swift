@@ -5,15 +5,17 @@ final class TabBarViewController: UITabBarController {
 
     let translateViewControllerFactory: () -> TranslateViewController
     let wordSetViewControllerFactory: () -> WordSetViewController
-//    let bookmarkViewControllerFactory: () -> BookmarkListViewController
+    let bookmarkViewControllerFactory: () -> BookmarkListViewController
 
     init(
         translateViewControllerFactory: @escaping () -> TranslateViewController,
-        wordSetViewControllerFactory: @escaping () -> WordSetViewController
+        wordSetViewControllerFactory: @escaping () -> WordSetViewController,
+        bookmarkViewControllerFactory: @escaping () -> BookmarkListViewController
     ) {
         self.translateViewControllerFactory = translateViewControllerFactory
         self.wordSetViewControllerFactory = wordSetViewControllerFactory
-//        self.bookmarkViewControllerFactory = bookmarkViewControllerFactory
+        self.bookmarkViewControllerFactory = bookmarkViewControllerFactory
+        
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -39,19 +41,19 @@ final class TabBarViewController: UITabBarController {
                 selectedImage: UIImage(systemName: "book.fill")
             )
         }
-
-//        let bookmarkViewController = UINavigationController(rootViewController: bookmarkViewControllerFactory()).then {
-//            $0.tabBarItem = UITabBarItem(
-//                title: "즐겨찾기",
-//                image: UIImage(systemName: "star"),
-//                selectedImage: UIImage(systemName: "star.fill")
-//            )
-//        }
+        
+        let bookmarkViewController = bookmarkViewControllerFactory().then {
+            $0.tabBarItem = UITabBarItem(
+                title: "즐겨찾기",
+                image: UIImage(systemName: "bookmark"),
+                selectedImage: UIImage(systemName: "bookmark.fill")
+            )
+        }
 
         viewControllers = [
             translateViewController,
-            wordSetViewController
-//            bookmarkViewController
+            wordSetViewController,
+            bookmarkViewController
         ]
 
         self.tabBar.backgroundColor = .systemBackground

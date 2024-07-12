@@ -20,6 +20,7 @@ class Coordinator {
         let testViewControllerFactory: (TestViewController.Dependency) -> TestViewController
         let testResultViewControllerFactory: (TestResultViewController.Dependency) -> TestResultViewController
         let translateViewControllerFactory: (TranslateViewController.Dependency) -> TranslateViewController
+        let bookmarkListViewControllerFactory: (BookmarkListViewController.Dependency) -> BookmarkListViewController
     }
     
     let mainNavigationController: UINavigationController = {
@@ -37,6 +38,7 @@ class Coordinator {
     let testViewControllerFactory: (TestViewController.Dependency) -> TestViewController
     let testResultViewControllerFactory: (TestResultViewController.Dependency) -> TestResultViewController
     let translateViewControllerFactory: (TranslateViewController.Dependency) -> TranslateViewController
+    let bookmarkListViewControllerFactory: (BookmarkListViewController.Dependency) -> BookmarkListViewController
     
     public init(dependency: Dependency, sceneDependency: SceneDependency) {
         self.window = dependency.window
@@ -50,6 +52,7 @@ class Coordinator {
         self.testViewControllerFactory = sceneDependency.testViewControllerFactory
         self.testResultViewControllerFactory = sceneDependency.testResultViewControllerFactory
         self.translateViewControllerFactory = sceneDependency.translateViewControllerFactory
+        self.bookmarkListViewControllerFactory = sceneDependency.bookmarkListViewControllerFactory
     }
     
     public func start() {
@@ -79,6 +82,10 @@ extension Coordinator {
                 },
                 wordSetViewControllerFactory: {
                     self.wordSetViewControllerFactory(.init(viewModel: .init(dependency: .init(coordinator: self, storage: self.storage))))
+                }, 
+                bookmarkViewControllerFactory: {
+                    self.bookmarkListViewControllerFactory(.init(viewModel: BookmarkListViewModel()))
+
                 }
             )
             return tabBarController

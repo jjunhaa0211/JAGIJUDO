@@ -66,6 +66,7 @@
 		0E6AAF642C3E9488002E547E /* TranslateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6AAF632C3E9488002E547E /* TranslateViewModel.swift */; };
 		0E6AAF662C3E94BF002E547E /* TranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6AAF652C3E94BF002E547E /* TranslationService.swift */; };
 		0E6AAF6E2C3FADAD002E547E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6AAF6D2C3FADAD002E547E /* TabBarViewController.swift */; };
+		0E6AAF702C3FE10D002E547E /* BookmarkListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6AAF6F2C3FE10D002E547E /* BookmarkListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +127,7 @@
 		0E6AAF632C3E9488002E547E /* TranslateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewModel.swift; sourceTree = "<group>"; };
 		0E6AAF652C3E94BF002E547E /* TranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationService.swift; sourceTree = "<group>"; };
 		0E6AAF6D2C3FADAD002E547E /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		0E6AAF6F2C3FE10D002E547E /* BookmarkListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +307,7 @@
 				0E6AAF1E2C3E8BD8002E547E /* BookmarkListViewController.swift */,
 				0E6AAF202C3E8BEB002E547E /* BookmarkCollectionViewCell.swift */,
 				0E6AAF222C3E8BF6002E547E /* BookmarkTextStackView.swift */,
+				0E6AAF6F2C3FE10D002E547E /* BookmarkListViewModel.swift */,
 			);
 			path = Bookmark;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				0E6AAF2B2C3E8CCD002E547E /* WordSetTableViewCell.swift in Sources */,
 				0E6AAEEC2C3E88BE002E547E /* WordSetStorage.swift in Sources */,
 				0E6AAEFD2C3E8A5E002E547E /* TranslatorManager.swift in Sources */,
+				0E6AAF702C3FE10D002E547E /* BookmarkListViewModel.swift in Sources */,
 				0E6AAF292C3E8CC3002E547E /* WordSetViewController.swift in Sources */,
 				0E6AAF542C3E8E1B002E547E /* Scene.swift in Sources */,
 				0E6AAF412C3E8D79002E547E /* TestResultViewModel.swift in Sources */,

@@ -118,6 +118,7 @@ final public class TranslateViewController: UIViewController {
         view.backgroundColor = .secondarySystemBackground
         
         setupViews()
+        
     }
 }
 

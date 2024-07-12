@@ -1,8 +1,17 @@
 import SnapKit
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class BookmarkListViewController: UIViewController {
+    
+    struct Dependency {
+        let viewModel: BookmarkListViewModel
+    }
+    
     private var bookmark: [Bookmark] = []
+    private let viewModel: BookmarkListViewModel
+    private let disposeBag = DisposeBag()
     
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -27,13 +36,32 @@ final class BookmarkListViewController: UIViewController {
         
         navigationItem.title = "즐겨찾기"
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        bindViewModel()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    private func bindViewModel() {
+        let input = BookmarkListViewModel.Input(
+            viewWillAppear: rx.sentMessage(#selector(viewWillAppear(_:))).map { _ in }
+        )
         
-        bookmark = UserDefaults.standard.bookmarks
-        collectionView.reloadData()
+        let output = viewModel.transform(input: input)
+        
+        output.bookmarks
+            .drive(onNext: { [weak self] bookmarks in
+                self?.bookmark = bookmarks
+                self?.collectionView.reloadData()
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    init(dependency: Dependency) {
+          self.viewModel = dependency.viewModel
+          super.init(nibName: nil, bundle: nil)
+      }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
