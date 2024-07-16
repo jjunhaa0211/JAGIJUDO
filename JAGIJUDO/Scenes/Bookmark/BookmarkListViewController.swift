@@ -38,6 +38,14 @@ final class BookmarkListViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         
         bindViewModel()
+        
+        let rightButton = UIBarButtonItem(image: UIImage(systemName: "home"), style: .done, target: self, action: #selector(didTapSaveButton))
+        navigationItem.rightBarButtonItem = rightButton
+    }
+
+    @objc func didTapSaveButton() {
+        // Save 버튼이 눌렸을 때의 처리 로직
+        print("Save button tapped")
     }
     
     private func bindViewModel() {

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E1314182C46777B00B7F9F4 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1314172C46777B00B7F9F4 /* VideoViewController.swift */; };
+		0E13141A2C467A6300B7F9F4 /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1314192C467A6300B7F9F4 /* VideoViewModel.swift */; };
+		0E13141C2C46893300B7F9F4 /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E13141B2C46893300B7F9F4 /* VideoDetailViewController.swift */; };
+		0E13141F2C4691A400B7F9F4 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E13141E2C4691A400B7F9F4 /* AudioViewController.swift */; };
+		0E1314212C4691D100B7F9F4 /* AudioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1314202C4691D100B7F9F4 /* AudioViewModel.swift */; };
 		0E6AAEC52C3E8724002E547E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6AAEC42C3E8724002E547E /* AppDelegate.swift */; };
 		0E6AAEC72C3E8724002E547E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6AAEC62C3E8724002E547E /* SceneDelegate.swift */; };
 		0E6AAECF2C3E8724002E547E /* JAGIJUDO.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E6AAECD2C3E8724002E547E /* JAGIJUDO.xcdatamodeld */; };
@@ -70,6 +75,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E1314172C46777B00B7F9F4 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		0E1314192C467A6300B7F9F4 /* VideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
+		0E13141B2C46893300B7F9F4 /* VideoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailViewController.swift; sourceTree = "<group>"; };
+		0E13141E2C4691A400B7F9F4 /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
+		0E1314202C4691D100B7F9F4 /* AudioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewModel.swift; sourceTree = "<group>"; };
 		0E6AAEC12C3E8724002E547E /* JAGIJUDO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JAGIJUDO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E6AAEC42C3E8724002E547E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E6AAEC62C3E8724002E547E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +155,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E1314162C46776900B7F9F4 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				0E1314172C46777B00B7F9F4 /* VideoViewController.swift */,
+				0E1314192C467A6300B7F9F4 /* VideoViewModel.swift */,
+				0E13141B2C46893300B7F9F4 /* VideoDetailViewController.swift */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		0E13141D2C46918100B7F9F4 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				0E13141E2C4691A400B7F9F4 /* AudioViewController.swift */,
+				0E1314202C4691D100B7F9F4 /* AudioViewModel.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		0E6AAEB82C3E8724002E547E = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +309,8 @@
 		0E6AAF152C3E8B96002E547E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0E13141D2C46918100B7F9F4 /* Audio */,
+				0E1314162C46776900B7F9F4 /* Video */,
 				0E6AAF3D2C3E8D63002E547E /* StudyHome */,
 				0E6AAF312C3E8D02002E547E /* WordListHome */,
 				0E6AAF242C3E8CA5002E547E /* WordSetHome */,
@@ -525,6 +556,8 @@
 				0E6AAF1A2C3E8BB3002E547E /* TranslateViewController.swift in Sources */,
 				0E6AAEF02C3E88D5002E547E /* WordSetStorageType.swift in Sources */,
 				0E6AAF6E2C3FADAD002E547E /* TabBarViewController.swift in Sources */,
+				0E13141A2C467A6300B7F9F4 /* VideoViewModel.swift in Sources */,
+				0E13141C2C46893300B7F9F4 /* VideoDetailViewController.swift in Sources */,
 				0E6AAF082C3E8B07002E547E /* Bookmark.swift in Sources */,
 				0E6AAEF52C3E897A002E547E /* WordSet.swift in Sources */,
 				0E6AAF522C3E8E0E002E547E /* Transition.swift in Sources */,
@@ -535,6 +568,7 @@
 				0E6AAF142C3E8B64002E547E /* DateHelper.swift in Sources */,
 				0E6AAF592C3E8E4A002E547E /* Color.swift in Sources */,
 				0E6AAF452C3E8D92002E547E /* TestResultCollectionViewCell.swift in Sources */,
+				0E1314182C46777B00B7F9F4 /* VideoViewController.swift in Sources */,
 				0E6AAF5C2C3E8E72002E547E /* WordStorableViewModelType.swift in Sources */,
 				0E6AAF272C3E8CB6002E547E /* WordSetViewModel.swift in Sources */,
 				0E6AAF572C3E8E2F002E547E /* Image.swift in Sources */,
@@ -547,6 +581,7 @@
 				0E6AAEEE2C3E88CA002E547E /* WordStorageType.swift in Sources */,
 				0E6AAEC52C3E8724002E547E /* AppDelegate.swift in Sources */,
 				0E6AAF472C3E8D9E002E547E /* TestViewController.swift in Sources */,
+				0E13141F2C4691A400B7F9F4 /* AudioViewController.swift in Sources */,
 				0E6AAECF2C3E8724002E547E /* JAGIJUDO.xcdatamodeld in Sources */,
 				0E6AAF662C3E94BF002E547E /* TranslationService.swift in Sources */,
 				0E6AAEF72C3E89A7002E547E /* TestWord.swift in Sources */,
@@ -558,6 +593,7 @@
 				0E6AAF002C3E8A77002E547E /* UIColor+.swift in Sources */,
 				0E6AAF0A2C3E8B12002E547E /* Type.swift in Sources */,
 				0E6AAF382C3E8D32002E547E /* WordListViewModel.swift in Sources */,
+				0E1314212C4691D100B7F9F4 /* AudioViewModel.swift in Sources */,
 				0E6AAF3A2C3E8D3F002E547E /* WordListViewController.swift in Sources */,
 				0E6AAF2E2C3E8CE1002E547E /* WordSetCreateViewModel.swift in Sources */,
 				0E6AAF3C2C3E8D49002E547E /* WordListTableViewCell.swift in Sources */,

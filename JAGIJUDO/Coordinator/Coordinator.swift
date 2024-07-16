@@ -21,6 +21,8 @@ class Coordinator {
         let testResultViewControllerFactory: (TestResultViewController.Dependency) -> TestResultViewController
         let translateViewControllerFactory: (TranslateViewController.Dependency) -> TranslateViewController
         let bookmarkListViewControllerFactory: (BookmarkListViewController.Dependency) -> BookmarkListViewController
+        let videoViewControllerFactory: (VideoViewController.Dependency) -> VideoViewController
+        let audioViewContorllerFactory: (AudioViewController.Dependency) -> AudioViewController
     }
     
     let mainNavigationController: UINavigationController = {
@@ -40,6 +42,9 @@ class Coordinator {
     let translateViewControllerFactory: (TranslateViewController.Dependency) -> TranslateViewController
     let bookmarkListViewControllerFactory: (BookmarkListViewController.Dependency) -> BookmarkListViewController
     
+    let videoViewControllerFactory: (VideoViewController.Dependency) -> VideoViewController
+    let audioViewControllerFactory: (AudioViewController.Dependency) -> AudioViewController
+    
     public init(dependency: Dependency, sceneDependency: SceneDependency) {
         self.window = dependency.window
         self.storage = dependency.storage
@@ -53,6 +58,8 @@ class Coordinator {
         self.testResultViewControllerFactory = sceneDependency.testResultViewControllerFactory
         self.translateViewControllerFactory = sceneDependency.translateViewControllerFactory
         self.bookmarkListViewControllerFactory = sceneDependency.bookmarkListViewControllerFactory
+        self.videoViewControllerFactory = sceneDependency.videoViewControllerFactory
+        self.audioViewControllerFactory = sceneDependency.audioViewContorllerFactory
     }
     
     public func start() {
@@ -86,9 +93,18 @@ extension Coordinator {
                 bookmarkViewControllerFactory: {
                     self.bookmarkListViewControllerFactory(.init(viewModel: BookmarkListViewModel()))
 
+                },
+                videoViewControllerFactory: {
+                    self.videoViewControllerFactory(.init(viewModel: VideoViewModel(coordinator: self)))
+                },
+                audioViewControllerFactory: {
+                    self.audioViewControllerFactory(.init(viewModel: AudioViewModel(coordinator: self)))
                 }
             )
             return tabBarController
+        case .video:
+            let videoController = VideoViewController(dependency: .init(viewModel: .init(coordinator: self)))
+            return videoController
         default:
             return UIViewController()
         }

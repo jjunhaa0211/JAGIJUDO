@@ -6,15 +6,21 @@ final class TabBarViewController: UITabBarController {
     let translateViewControllerFactory: () -> TranslateViewController
     let wordSetViewControllerFactory: () -> WordSetViewController
     let bookmarkViewControllerFactory: () -> BookmarkListViewController
+    let videoViewControllerFactory: () -> VideoViewController
+    let audioViewControllerFactory: () -> AudioViewController
 
     init(
         translateViewControllerFactory: @escaping () -> TranslateViewController,
         wordSetViewControllerFactory: @escaping () -> WordSetViewController,
-        bookmarkViewControllerFactory: @escaping () -> BookmarkListViewController
+        bookmarkViewControllerFactory: @escaping () -> BookmarkListViewController,
+        videoViewControllerFactory: @escaping () -> VideoViewController,
+        audioViewControllerFactory: @escaping () -> AudioViewController
     ) {
         self.translateViewControllerFactory = translateViewControllerFactory
         self.wordSetViewControllerFactory = wordSetViewControllerFactory
         self.bookmarkViewControllerFactory = bookmarkViewControllerFactory
+        self.videoViewControllerFactory = videoViewControllerFactory
+        self.audioViewControllerFactory = audioViewControllerFactory
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -25,6 +31,8 @@ final class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tabBar.tintColor = .systemPink
 
         let translateViewController = translateViewControllerFactory().then {
             $0.tabBarItem = UITabBarItem(
@@ -49,12 +57,31 @@ final class TabBarViewController: UITabBarController {
                 selectedImage: UIImage(systemName: "bookmark.fill")
             )
         }
+        
+        let videoViewController = videoViewControllerFactory().then {
+            $0.tabBarItem = UITabBarItem(
+                title: "강의",
+                image: UIImage(systemName: "sparkles.tv"),
+                selectedImage: UIImage(systemName: "sparkles.tv.fill")
+            )
+        }
+        
+        let audioViewController = audioViewControllerFactory().then {
+            $0.tabBarItem = UITabBarItem(
+                title: "대화",
+                image: UIImage(systemName: "speaker"),
+                selectedImage: UIImage(systemName: "speaker.fill")
+            )
+        }
 
         viewControllers = [
             translateViewController,
             wordSetViewController,
-            bookmarkViewController
+            bookmarkViewController,
+            videoViewController,
+            audioViewController
         ]
+        self.selectedIndex = 0
 
         self.tabBar.backgroundColor = .systemBackground
     }

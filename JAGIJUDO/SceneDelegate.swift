@@ -11,8 +11,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let coordinator = AppDependency.execute(window: UIWindow(windowScene: scene)).coordinator
         
         window = coordinator.window
-        
-        
         coordinator.root(scene: .tapbar, animated: false)
     }
 
@@ -25,7 +23,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillEnterForeground(_ scene: UIScene) { }
 
     func sceneDidEnterBackground(_ scene: UIScene) { (UIApplication.shared.delegate as? AppDelegate)?.saveContext() }
-
-
 }
 

@@ -7,6 +7,7 @@ enum Scene {
     case testResult
     case translate
     case tapbar
+    case video
 }
 
 enum NavigationScene {

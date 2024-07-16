@@ -32,6 +32,13 @@ extension AppDependency {
         let bookmarkListViewControllerFactory: (BookmarkListViewController.Dependency) -> BookmarkListViewController = { dependency in
             return .init(dependency: dependency)
         }
+        let videoViewControllerFactory: (VideoViewController.Dependency) -> VideoViewController = { dependency in
+            return .init(dependency: dependency)
+        }
+        
+        let audioViewControllerFactory: (AudioViewController.Dependency) -> AudioViewController = { dependency in
+            return .init(dependency: dependency)
+        }
         
         return .init(
             coordinator:
@@ -48,7 +55,8 @@ extension AppDependency {
                             testViewControllerFactory: testViewControllerFactory,
                             testResultViewControllerFactory: testResultViewControllerFactory,
                             translateViewControllerFactory: translateViewControllerFactory,
-                            bookmarkListViewControllerFactory: bookmarkListViewControllerFactory
+                            bookmarkListViewControllerFactory: bookmarkListViewControllerFactory,
+                            videoViewControllerFactory: videoViewControllerFactory, audioViewContorllerFactory: audioViewControllerFactory
                         )
                     )
         )
