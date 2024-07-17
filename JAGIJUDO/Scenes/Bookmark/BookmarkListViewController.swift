@@ -25,6 +25,8 @@ final class BookmarkListViewController: UIViewController {
         collectionView.backgroundColor = .secondarySystemBackground
         collectionView.register(BookmarkCollectionViewCell.self, forCellWithReuseIdentifier: BookmarkCollectionViewCell.identifier)
         collectionView.dataSource = self
+        collectionView.isAccessibilityElement = true
+        collectionView.accessibilityLabel = "즐겨찾기 목록"
         
         return collectionView
     }()
@@ -40,6 +42,7 @@ final class BookmarkListViewController: UIViewController {
         bindViewModel()
         
         let rightButton = UIBarButtonItem(image: UIImage(systemName: "home"), style: .done, target: self, action: #selector(didTapSaveButton))
+        rightButton.accessibilityLabel = "홈으로"
         navigationItem.rightBarButtonItem = rightButton
     }
 
@@ -77,14 +80,19 @@ extension BookmarkListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return bookmark.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookmarkCollectionViewCell.identifier, for: indexPath) as? BookmarkCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookmarkCollectionViewCell.identifier, for: indexPath) as? BookmarkCollectionViewCell else {
+            return UICollectionViewCell()
+        }
         
-        let bookmark = bookmark[indexPath.item]
-        cell?.setup(from: bookmark)
+        let bookmarkItem = bookmark[indexPath.item]
+        cell.setup(from: bookmarkItem)
+        cell.isAccessibilityElement = true
+
+        cell.accessibilityLabel = "\(indexPath.row + 1)번째 즐겨찾기에서 \(bookmarkItem.sourceLangue)는 \(bookmarkItem.sourceText), \(bookmarkItem.translatedLanguage)는 \(bookmarkItem.translatedText)입니다."
         
-        return cell ?? UICollectionViewCell()
+        return cell
     }
 }
 

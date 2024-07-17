@@ -1,6 +1,8 @@
 import UIKit
 import AVFoundation
 import Speech
+import SnapKit
+import Then
 
 final public class AudioViewController: UIViewController, SFSpeechRecognizerDelegate {
     
@@ -35,18 +37,18 @@ final public class AudioViewController: UIViewController, SFSpeechRecognizerDele
     }
 
     private func setupUI() {
-        textField.frame = CGRect(x: 20, y: 100, width: 280, height: 40)
+        textField.frame = CGRect(x: 80, y: 200, width: 280, height: 40)
         textField.borderStyle = .roundedRect
         textField.placeholder = "Recognized text appears here"
         view.addSubview(textField)
         
-        recordButton.frame = CGRect(x: 20, y: 150, width: 130, height: 50)
+        recordButton.frame = CGRect(x: 80, y: 250, width: 130, height: 50)
         recordButton.backgroundColor = .red
         recordButton.setTitle("Record", for: .normal)
         recordButton.addTarget(self, action: #selector(didTapRecordButton), for: .touchUpInside)
         view.addSubview(recordButton)
         
-        speakButton.frame = CGRect(x: 170, y: 150, width: 130, height: 50)
+        speakButton.frame = CGRect(x: 230, y: 250, width: 130, height: 50)
         speakButton.backgroundColor = .blue
         speakButton.setTitle("Speak", for: .normal)
         speakButton.addTarget(self, action: #selector(didTapSpeakButton), for: .touchUpInside)

@@ -19,6 +19,8 @@ final public class TranslateViewController: UIViewController {
         $0.setTitleColor(.label, for: .normal)
         $0.backgroundColor = .systemBackground
         $0.layer.cornerRadius = 9.0
+        $0.accessibilityLabel = "원본 언어 선택"
+        $0.accessibilityHint = "원본 언어를 변경하려면 탭하세요"
         
         $0.addTarget(self, action: #selector(didTapSourceLanguageButton), for: .touchUpInside)
     }
@@ -29,6 +31,8 @@ final public class TranslateViewController: UIViewController {
         $0.setTitleColor(.label, for: .normal)
         $0.backgroundColor = .systemBackground
         $0.layer.cornerRadius = 9.0
+        $0.accessibilityLabel = "대상 언어 선택"
+        $0.accessibilityHint = "번역될 언어를 변경하려면 탭하세요"
         
         $0.addTarget(self, action: #selector(didTapTargetLanguageButton), for: .touchUpInside)
     }
@@ -42,7 +46,7 @@ final public class TranslateViewController: UIViewController {
     }
     
     private lazy var resultBaseView = UIView().then {
-        $0.backgroundColor = .white
+        $0.backgroundColor = .systemBackground
     }
     
     private lazy var resultLabel = UILabel().then {
@@ -50,10 +54,13 @@ final public class TranslateViewController: UIViewController {
         $0.textColor = UIColor.mainTintColor
         $0.text = "Hello"
         $0.numberOfLines = 0
+        $0.accessibilityLabel = "번역 결과"
+        $0.isAccessibilityElement = true
     }
     
     private lazy var bookmarkButton = UIButton().then {
         $0.setImage(UIImage(systemName: "bookmark"), for: .normal)
+        $0.accessibilityHint = "이 번역을 북마크에 추가하려면 탭하세요"
     }
     
     @objc func didTapBookmarkButton() {
@@ -80,6 +87,7 @@ final public class TranslateViewController: UIViewController {
     private lazy var copyButton = UIButton().then {
         $0.setImage(UIImage(systemName: "doc.on.doc"), for: .normal)
         $0.addTarget(self, action: #selector(didTapCopyButton), for: .touchUpInside)
+        $0.accessibilityHint = "번역 결과를 클립보드에 복사하려면 탭하세요"
     }
     
     @objc func didTapCopyButton() {
@@ -99,6 +107,7 @@ final public class TranslateViewController: UIViewController {
         $0.textColor = .tertiaryLabel
         $0.numberOfLines = 0
         $0.font = .systemFont(ofSize: 23.0, weight: .semibold)
+        $0.accessibilityLabel = "원본 텍스트"
     }
     
     init(dependency: Dependency) {
