@@ -7,21 +7,22 @@ class VideoDetailViewController: UIViewController {
     private var data: [String: Any]
     private var playerViewController = AVPlayerViewController().then {
         $0.view.isAccessibilityElement = true
-        // 비디오 설명을 접근성 라벨로 추가
         $0.view.accessibilityLabel = "비디오 재생 중, 자세한 내용은 아래 설명을 참고하세요."
     }
     private var player: AVPlayer?
     private var descriptionLabel = UILabel().then {
         $0.numberOfLines = 0
-        $0.font = UIFont.systemFont(ofSize: 16)
+        $0.font = UIFont.preferredFont(forTextStyle: .body)
         $0.textColor = .darkGray
         $0.isAccessibilityElement = true
-        // 설명 접근성 라벨 업데이트
+        $0.adjustsFontForContentSizeCategory = true
         $0.accessibilityLabel = "비디오 설명"
     }
     private var messageTableView = UITableView().then {
         $0.register(MessageTableViewCell.self, forCellReuseIdentifier: "MessageCell")
         $0.isAccessibilityElement = true
+        $0.rowHeight = UITableView.automaticDimension
+        $0.estimatedRowHeight = 44
         $0.accessibilityLabel = "대화 내용 테이블"
     }
     private var languageSwitch = UISwitch().then {
@@ -90,7 +91,7 @@ class VideoDetailViewController: UIViewController {
             addChild(playerViewController)
             playerViewController.view.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height / 3)
             playerViewController.didMove(toParent: self)
-            // 비디오에 대한 설명을 접근성 라벨에 추가
+            
             playerViewController.view.accessibilityLabel = data["description"] as? String ?? "비디오 재생 중"
         }
     }
@@ -132,15 +133,19 @@ class MessageTableViewCell: UITableViewCell {
     var messageLabel = UILabel().then {
         $0.numberOfLines = 0
         $0.textColor = .black
+        $0.font = UIFont.preferredFont(forTextStyle: .body)
+        $0.adjustsFontForContentSizeCategory = true
+        $0.isAccessibilityElement = true
     }
-
+    
     func configure(with message: [String: String]) {
         guard let sender = message["sender"], let text = message["message"] else { return }
         messageLabel.textAlignment = sender == "Person A" ? .left : .right
         messageLabel.text = text
         messageLabel.isAccessibilityElement = true
-        // 각 메시지의 발신자와 내용을 명확하게 읽도록 설정
+        
         messageLabel.accessibilityLabel = "\(sender)가 말했습니다: \(text)"
+        contentView.addSubview(messageLabel)
         messageLabel.snp.remakeConstraints { make in
             make.top.bottom.equalToSuperview().inset(10)
             if sender == "Person A" {

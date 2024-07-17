@@ -4,16 +4,17 @@ import Then
 
 final public class VideoViewController: UIViewController {
     
-    
     struct Dependency {
         let viewModel: VideoViewModel
     }
     
+    let customFont = UIFont.systemFont(ofSize: 23.0, weight: .bold)
+    
     private struct Constants {
         static let sectionTitles = ["일상", "비지니스"]
-        static let cellHeight: CGFloat = 60.0
-        static let headerHeight: CGFloat = 44.0
-        static let headerFont = UIFont.systemFont(ofSize: 20, weight: .bold)
+        static let cellHeight: CGFloat = UITableView.automaticDimension
+        static let headerHeight: CGFloat = UITableView.automaticDimension
+        static let headerFont = UIFont.systemFont(ofSize: 23.0, weight: .bold)
         static let cellIdentifier = "SettingCell"
     }
     
@@ -59,12 +60,15 @@ final public class VideoViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.cellIdentifier)
         tableView.rowHeight = Constants.cellHeight
-        tableView.backgroundColor = .systemBackground
+        tableView.backgroundColor = .secondarySystemBackground
+        tableView.estimatedRowHeight = 60.0
+        tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.isAccessibilityElement = true
+        tableView.estimatedSectionHeaderHeight = 50.0
         tableView.accessibilityLabel = "강의 목록"
         view.addSubview(tableView)
-        tableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+        tableView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
     }
 }
@@ -73,32 +77,35 @@ extension VideoViewController: UITableViewDelegate, UITableViewDataSource {
     public func numberOfSections(in tableView: UITableView) -> Int {
         return Constants.sectionTitles.count
     }
-    
+
     public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
         let label = UILabel().then {
             $0.text = Constants.sectionTitles[section]
             $0.font = Constants.headerFont
-            $0.textColor = .black
+            $0.textColor = .systemPink
             $0.isAccessibilityElement = true
+            $0.adjustsFontForContentSizeCategory = true
             $0.accessibilityLabel = "\(Constants.sectionTitles[section]) 섹션"
         }
         headerView.addSubview(label)
         label.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(16)
-            $0.centerY.equalToSuperview()
+            $0.trailing.lessThanOrEqualToSuperview().offset(-16)
+            $0.top.equalToSuperview().offset(8)
+            $0.bottom.equalToSuperview().offset(-8)
         }
         return headerView
     }
-    
+
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return Constants.headerHeight
+        return UITableView.automaticDimension
     }
-    
+
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellDataSource[section].count
     }
-    
+
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath)
         cell.accessoryType = .disclosureIndicator
@@ -106,6 +113,8 @@ extension VideoViewController: UITableViewDelegate, UITableViewDataSource {
         cell.isAccessibilityElement = true
         cell.accessibilityLabel = "\(cell.textLabel?.text ?? "상세 항목")"
         cell.accessibilityHint = "탭하여 상세 정보 보기"
+        cell.textLabel?.font = UIFont.preferredFont(forTextStyle: .body)
+        cell.textLabel?.adjustsFontForContentSizeCategory = true
         return cell
     }
     

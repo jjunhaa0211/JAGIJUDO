@@ -119,11 +119,11 @@ extension Coordinator {
             let setCreateVC = wordSetCreateViewControllerFactory(.init(viewModel: .init(dependency: .init(coordinator: self, storage: storage))))
             return setCreateVC
         case .list:
-            let coredataStorage = WordStorage(dependency: .init(modelName: "AWord", title: title, parentIdentity: model))
+            let coredataStorage = WordStorage(dependency: .init(modelName: "JAGIJUDO", title: title, parentIdentity: model))
             let listVC = wordListViewControllerFactory(.init(viewModel: .init(dependency: .init(coordinator: self, storage: coredataStorage, model: 0))))
             return listVC
         case .listCreate:
-            let listStorage = WordStorage(dependency: .init(modelName: "AWord", title: title, parentIdentity: model))
+            let listStorage = WordStorage(dependency: .init(modelName: "JAGIJUDO", title: title, parentIdentity: model))
             let listCreateVC = wordListCreateViewControllerFactory(.init(viewModel: .init(dependency: .init(coordinator: self, storage: listStorage))))
             return listCreateVC
             

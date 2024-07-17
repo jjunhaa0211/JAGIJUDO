@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  AWord
-//
-//  Created by 홍성준 on 2021/11/29.
-//
-
 import UIKit
 import CoreData
 
