@@ -40,19 +40,8 @@ final public class VideoViewController: UIViewController {
     }
     
     private func setupUI() {
-        setupNavigationItem()
         setupTableView()
-        navigationController?.navigationBar.prefersLargeTitles = true
-        title = "강의"
         view.isAccessibilityElement = false
-    }
-    
-    private func setupNavigationItem() {
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .white
-        navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
     
     private func setupTableView() {

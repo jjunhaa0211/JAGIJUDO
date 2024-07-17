@@ -12,6 +12,8 @@
 		0E13141C2C46893300B7F9F4 /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E13141B2C46893300B7F9F4 /* VideoDetailViewController.swift */; };
 		0E13141F2C4691A400B7F9F4 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E13141E2C4691A400B7F9F4 /* AudioViewController.swift */; };
 		0E1314212C4691D100B7F9F4 /* AudioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1314202C4691D100B7F9F4 /* AudioViewModel.swift */; };
+		0E1314242C478C5400B7F9F4 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 0E1314232C478C5400B7F9F4 /* Moya */; };
+		0E1314262C478C5400B7F9F4 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 0E1314252C478C5400B7F9F4 /* RxMoya */; };
 		0E6AAEC52C3E8724002E547E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6AAEC42C3E8724002E547E /* AppDelegate.swift */; };
 		0E6AAEC72C3E8724002E547E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6AAEC62C3E8724002E547E /* SceneDelegate.swift */; };
 		0E6AAECF2C3E8724002E547E /* JAGIJUDO.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E6AAECD2C3E8724002E547E /* JAGIJUDO.xcdatamodeld */; };
@@ -145,9 +147,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E1314262C478C5400B7F9F4 /* RxMoya in Frameworks */,
 				0E6AAEE32C3E885A002E547E /* Alamofire in Frameworks */,
 				0E6AAEE62C3E8866002E547E /* SnapKit in Frameworks */,
 				0E6AAEDD2C3E8835002E547E /* Then in Frameworks */,
+				0E1314242C478C5400B7F9F4 /* Moya in Frameworks */,
 				0E6AAEE02C3E884D002E547E /* RxDataSources in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,6 +481,8 @@
 				0E6AAEDF2C3E884D002E547E /* RxDataSources */,
 				0E6AAEE22C3E885A002E547E /* Alamofire */,
 				0E6AAEE52C3E8866002E547E /* SnapKit */,
+				0E1314232C478C5400B7F9F4 /* Moya */,
+				0E1314252C478C5400B7F9F4 /* RxMoya */,
 			);
 			productName = JAGIJUDO;
 			productReference = 0E6AAEC12C3E8724002E547E /* JAGIJUDO.app */;
@@ -511,6 +517,7 @@
 				0E6AAEDE2C3E884D002E547E /* XCRemoteSwiftPackageReference "RxDataSources" */,
 				0E6AAEE12C3E885A002E547E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				0E6AAEE42C3E8866002E547E /* XCRemoteSwiftPackageReference "SnapKit" */,
+				0E1314222C478C5400B7F9F4 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 0E6AAEC22C3E8724002E547E /* Products */;
 			projectDirPath = "";
@@ -813,6 +820,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0E1314222C478C5400B7F9F4 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 		0E6AAEDB2C3E8835002E547E /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then";
@@ -848,6 +863,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0E1314232C478C5400B7F9F4 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E1314222C478C5400B7F9F4 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		0E1314252C478C5400B7F9F4 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E1314222C478C5400B7F9F4 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
 		0E6AAEDC2C3E8835002E547E /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0E6AAEDB2C3E8835002E547E /* XCRemoteSwiftPackageReference "Then" */;
